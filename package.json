@@ -2,6 +2,7 @@
   "scripts": {
     "test": "NODE_ENV=test jest",
     "test:update": "jest -u",
+    "test:watch": "jest --watch",
     "test:u": "npm run test:update",
     "test:coverage": "jest --coverage",
     "test:c": "npm run test:coverage",
