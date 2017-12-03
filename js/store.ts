@@ -4,6 +4,8 @@ import { createStore, compose, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import reducer from './reducers';
 
+declare var window: any;
+
 const store = createStore(
   reducer,
   compose(

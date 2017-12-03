@@ -9,7 +9,7 @@ export function setSearchTerm(searchTerm: string) {
   };
 }
 
-export function addAPIData(apiData: Show) {
+export function addAPIData(apiData: any) {
   return {
     type: ADD_API_DATA,
     payload: apiData

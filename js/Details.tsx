@@ -1,19 +1,19 @@
 // @flow
 
-import React, { Component } from 'react';
+import * as React from 'react';
 import { connect } from 'react-redux';
 import getAPIDetails from './asyncActions';
 import Header from './Header';
 import Spinner from './Spinner';
 
-class Details extends Component {
+class Details extends React.Component {
   componentDidMount() {
     if (!this.props.rating) {
       this.props.getAPIDetails();
     }
   }
   props: {
-    show: Show,
+    show: any,
     rating: string,
     getAPIDetails: Function
   };

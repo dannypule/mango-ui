@@ -1,10 +1,12 @@
 // @flow
 
-import React from 'react';
+import * as React from 'react';
 import { render } from 'react-dom';
 // import Perf from 'react-addons-perf';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
+
+declare const module: any;
 
 // window.Perf = Perf; // does not currently work with React fiber
 // Perf.start();

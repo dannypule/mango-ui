@@ -1,10 +1,11 @@
 // @flow
 
-import React, { Component } from 'react';
+import * as React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import styledComponentWithProps from 'styled-components-ts';
 
-const Wrapper = styled((Link: any))`
+const Wrapper = styledComponentWithProps(Link)`
   width: 32%;
   border: 2px solid #333;
   border-radius: 4px;
@@ -21,12 +22,12 @@ const Image = styled.img`
   margin-right: 10px;
 `;
 
-class ShowCard extends Component {
+class ShowCard extends React.Component {
   shouldComponentUpdate() {
     return false;
   }
 
-  props: Show;
+  props: any;
 
   render() {
     return (

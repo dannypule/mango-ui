@@ -2,6 +2,9 @@
 
 import { setSearchTerm, addAPIData } from '../actionCreators';
 
+declare const test: any;
+declare const expect: any;
+
 const strangerThings = {
   title: 'The Americans',
   year: '2013–',

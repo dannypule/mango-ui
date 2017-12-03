@@ -4,6 +4,10 @@ import moxios from 'moxios';
 import { addAPIData } from '../actionCreators';
 import getAPIDetails from '../asyncActions';
 
+declare const test: any;
+declare const expect: any;
+declare const jest: any;
+
 const strangerThings = {
   title: 'The Americans',
   year: '2013–',

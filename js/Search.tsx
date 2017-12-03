@@ -1,22 +1,20 @@
 // @flow
 
-import React from 'react';
+import * as React from 'react';
 import { connect } from 'react-redux';
 import ShowCard from './ShowCard';
 import Header from './Header';
 
 const Search = (props: {
   searchTerm: string, // eslint-disable-line react/no-unused-prop-types
-  shows: Array<Show> // an array of type `Show`
+  shows: Array<any> // an array of type `Show`
 }) => (
   <div className="search">
     <Header showSearch />
     <div>
       {props.shows
-        .filter(
-          (show: Show) => `${show.title} ${show.title}`.toLowerCase().indexOf(props.searchTerm.toLowerCase()) >= 0
-        )
-        .map((show: Show) => <ShowCard key={show.imdbID} {...show} />)}
+        .filter((show: any) => `${show.title} ${show.title}`.toLowerCase().indexOf(props.searchTerm.toLowerCase()) >= 0)
+        .map((show: any) => <ShowCard key={show.imdbID} {...show} />)}
     </div>
   </div>
 );

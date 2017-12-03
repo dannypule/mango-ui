@@ -1,6 +1,9 @@
-// @flwo
+// @flow
 
 import reducers from '../reducers';
+
+declare const test: any;
+declare const expect: any;
 
 test('SET_SEARCH_TERM', () => {
   const state = reducers({ searchTerm: '', apiData: {} }, { type: 'SET_SEARCH_TERM', payload: 'black' });
