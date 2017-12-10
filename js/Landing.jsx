@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 // import { Link } from 'react-router-dom';
 // import type { RouterHistory } from 'react-router-dom';
 import { setSearchTerm } from './actionCreators';
 
 class Landing extends Component {
-  props: {
-    searchTerm: string,
-    handleSearchTermChange: Function,
-    clearSearchTerm: Function,
-    history: any
+  propTypes = {
+    searchTerm: PropTypes.string,
+    handleSearchTermChange: PropTypes.func,
+    clearSearchTerm: PropTypes.func,
+    history: PropTypes.object.isRequired // eslint-disable-line react/forbid-prop-types
   };
 
   goToSearch = event => {

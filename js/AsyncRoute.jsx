@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Spinner from './Spinner';
 
 class AsyncRoute extends Component {
@@ -11,10 +12,6 @@ class AsyncRoute extends Component {
       this.setState({ loaded: true });
     });
   }
-  props: {
-    props: mixed,
-    loadingPromise: Promise<{ default: Class<React.Component<*, *, *>> }>
-  };
   component = null;
   render() {
     if (this.state.loaded) {
@@ -23,5 +20,10 @@ class AsyncRoute extends Component {
     return <Spinner />;
   }
 }
+
+AsyncRoute.propTypes = {
+  props: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
+  loadingPromise: PropTypes.object.isRequired // eslint-disable-line react/forbid-prop-types
+};
 
 export default AsyncRoute;
