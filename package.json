@@ -10,7 +10,7 @@
     "build:dev": "NODE_ENV=development webpack -d",
     "watch": "webpack --watch",
     "w": "webpack --watch",
-    "dev": "webpack-dev-server",
+    "dev": "webpack-dev-server && npm run api",
     "start": "NODE_ENV=server node server.js",
     "api": "node ratingsAPI.js",
     "lint": "eslint **/*.{js,jsx} --quiet",

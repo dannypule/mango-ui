@@ -1,5 +1,3 @@
-// @flow
-
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import getAPIDetails from './asyncActions';
@@ -56,7 +54,7 @@ const mapStateToProps = (state, ownProps) => {
   };
 };
 
-const mapDispatchToProps = (dispatch: Function, ownProps) => ({
+const mapDispatchToProps = (dispatch, ownProps) => ({
   getAPIDetails() {
     dispatch(getAPIDetails(ownProps.show.imdbID));
   }

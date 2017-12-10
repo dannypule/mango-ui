@@ -1,9 +1,7 @@
-// @flow
-
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 // import { Link } from 'react-router-dom';
-import type { RouterHistory } from 'react-router-dom';
+// import type { RouterHistory } from 'react-router-dom';
 import { setSearchTerm } from './actionCreators';
 
 class Landing extends Component {
@@ -11,17 +9,17 @@ class Landing extends Component {
     searchTerm: string,
     handleSearchTermChange: Function,
     clearSearchTerm: Function,
-    history: RouterHistory
+    history: any
   };
 
-  goToSearch = (event: SyntheticEvent) => {
+  goToSearch = event => {
     event.preventDefault();
     this.props.history.push('/search'); // history is now injected into every route so no need to use context
   };
 
-  browseAll = (event: SyntheticEvent) => {
+  browseAll = event => {
     event.preventDefault();
-    this.props.clearSearchTerm('');
+    this.props.clearSearchTerm();
     this.props.history.push('/search'); // history is now injected into every route so no need to use context
   };
 
@@ -46,7 +44,7 @@ class Landing extends Component {
 const mapStateToProps = state => ({ searchTerm: state.searchTerm }); // subscribe to a slice of state
 
 // insert some dispatch-ability into the component via props
-const mapDispatchToProps = (dispatch: Function) => ({
+const mapDispatchToProps = dispatch => ({
   handleSearchTermChange: event => {
     dispatch(setSearchTerm(event.target.value));
   },

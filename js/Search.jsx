@@ -1,5 +1,3 @@
-// @flow
-
 import React from 'react';
 import { connect } from 'react-redux';
 import ShowCard from './ShowCard';
@@ -13,10 +11,8 @@ const Search = (props: {
     <Header showSearch />
     <div>
       {props.shows
-        .filter(
-          (show: Show) => `${show.title} ${show.title}`.toLowerCase().indexOf(props.searchTerm.toLowerCase()) >= 0
-        )
-        .map((show: Show) => <ShowCard key={show.imdbID} {...show} />)}
+        .filter(show => `${show.title} ${show.title}`.toLowerCase().indexOf(props.searchTerm.toLowerCase()) >= 0)
+        .map(show => <ShowCard key={show.imdbID} {...show} />)}
     </div>
   </div>
 );
