@@ -12,7 +12,7 @@ const compression = require('compression');
 // const webpackDevMiddleware = require('webpack-dev-middleware'); // relevant to serverside rendering
 // const webpackHotMiddleware = require('webpack-hot-middleware'); // relevant to serverside rendering
 // const webpack = require('webpack');
-const App = require('./js/App').default; // need to put default as 'export default' returns an object with default key on it
+const App = require('./src/app/App').default; // need to put default as 'export default' returns an object with default key on it
 // const webpackConfig = require('./webpack.config'); // relevant to serverside rendering
 
 const StaticRouter = ReactRouter.StaticRouter;
@@ -37,9 +37,10 @@ const server = express();
 
 server.use(compression()); // does gzipping etc
 
-server.use('/public', express.static('./public')); // says: statically serve everything that is in the public directory and add correct mime types for images and do other things
+server.use('/public', express.static('./public')); // says: statically serve everything that is in the dist directory and add correct mime types for images and do other things
 
 server.use((req, res) => {
+  // res.send('foo');
   console.log(req.url);
   const context = {};
   const body = ReactDOMServer.renderToString(
