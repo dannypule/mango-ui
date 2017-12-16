@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 // import type { Match } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
-import store from './store';
+import store from './_store/store';
 import AsyncRoute from './AsyncRoute';
 import preload from '../../data.json';
 
@@ -13,11 +13,20 @@ const App = () => (
   <Provider store={store}>
     <div className="app">
       <Switch>
-        <Route exact path="/" component={props => <AsyncRoute props={props} loadingPromise={import('./Landing')} />} />
+        <Route
+          exact
+          path="/"
+          component={props => (
+            <AsyncRoute props={props} loadingPromise={import('./Search/components/Landing/Landing')} />
+          )}
+        />
         <Route
           path="/search"
           component={props => (
-            <AsyncRoute props={Object.assign({ shows: preload.shows }, props)} loadingPromise={import('./Search')} />
+            <AsyncRoute
+              props={Object.assign({ shows: preload.shows }, props)}
+              loadingPromise={import('./Search/Search')}
+            />
           )}
         />
         {/* <Route path="/search" component={props => <Search shows={preload.shows} {...props} />} /> */}
@@ -29,7 +38,7 @@ const App = () => (
               <AsyncRoute
                 props={Object.assign({ show: selectedShow, match: {} }, props)}
                 show={selectedShow}
-                loadingPromise={import('./Details')}
+                loadingPromise={import('./Search/components/Details/Details')}
               />
             );
           }}

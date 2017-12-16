@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Spinner from './Spinner';
+import Spinner from './_shared/components/Spinner';
 
 class AsyncRoute extends Component {
   state = {
