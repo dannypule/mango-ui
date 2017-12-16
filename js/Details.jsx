@@ -1,7 +1,6 @@
-// @flow
-
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import getAPIDetails from './asyncActions';
 import Header from './Header';
 import Spinner from './Spinner';
@@ -12,12 +11,6 @@ class Details extends Component {
       this.props.getAPIDetails();
     }
   }
-  props: {
-    show: Show,
-    rating: string,
-    getAPIDetails: Function
-  };
-
   render() {
     const { title, description, year, poster, trailer } = this.props.show;
     let ratingComponent;
@@ -49,6 +42,12 @@ class Details extends Component {
   }
 }
 
+Details.propTypes = {
+  show: PropTypes.object.isRequired,
+  rating: PropTypes.string.isRequired,
+  getAPIDetails: PropTypes.func.isRequired
+};
+
 const mapStateToProps = (state, ownProps) => {
   const apiData = state.apiData[ownProps.show.imdbID] ? state.apiData[ownProps.show.imdbID] : {};
   return {
@@ -56,7 +55,7 @@ const mapStateToProps = (state, ownProps) => {
   };
 };
 
-const mapDispatchToProps = (dispatch: Function, ownProps) => ({
+const mapDispatchToProps = (dispatch, ownProps) => ({
   getAPIDetails() {
     dispatch(getAPIDetails(ownProps.show.imdbID));
   }

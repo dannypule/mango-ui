@@ -1,25 +1,24 @@
-// @flow
-
 import React from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import ShowCard from './ShowCard';
 import Header from './Header';
 
-const Search = (props: {
-  searchTerm: string, // eslint-disable-line react/no-unused-prop-types
-  shows: Array<Show> // an array of type `Show`
-}) => (
+const Search = props => (
   <div className="search">
     <Header showSearch />
     <div>
       {props.shows
-        .filter(
-          (show: Show) => `${show.title} ${show.title}`.toLowerCase().indexOf(props.searchTerm.toLowerCase()) >= 0
-        )
-        .map((show: Show) => <ShowCard key={show.imdbID} {...show} />)}
+        .filter(show => `${show.title} ${show.title}`.toLowerCase().indexOf(props.searchTerm.toLowerCase()) >= 0)
+        .map(show => <ShowCard key={show.imdbID} {...show} />)}
     </div>
   </div>
 );
+
+Search.propTypes = {
+  // searchTerm: PropTypes.string.isRequired,
+  shows: PropTypes.array.isRequired
+};
 
 // ===============================
 // take a slice of state and map it to props

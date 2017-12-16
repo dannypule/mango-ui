@@ -1,10 +1,9 @@
-// @flow
-
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const Wrapper = styled((Link: any))`
+const Wrapper = styled(Link)`
   width: 32%;
   border: 2px solid #333;
   border-radius: 4px;
@@ -26,8 +25,6 @@ class ShowCard extends Component {
     return false;
   }
 
-  props: Show;
-
   render() {
     return (
       <Wrapper className="show-card" to={`/details/${this.props.imdbID}`}>
@@ -41,5 +38,13 @@ class ShowCard extends Component {
     );
   }
 }
+
+ShowCard.propTypes = {
+  imdbID: PropTypes.string.isRequired,
+  poster: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  year: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired
+};
 
 export default ShowCard;
