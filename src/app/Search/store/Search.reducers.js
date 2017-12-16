@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { SET_SEARCH_TERM, ADD_API_DATA } from './actions';
+import { SET_SEARCH_TERM, ADD_API_DATA } from './Search.actions';
 
 const searchTerm = (state = '', action) => {
   if (action.type === SET_SEARCH_TERM) {

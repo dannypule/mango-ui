@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { addAPIData } from './actionCreators';
+import { addAPIData } from './Search.action-creators';
 
 export default function getAPIDetails(imdbID) {
   return dispatch => {

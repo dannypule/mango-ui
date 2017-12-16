@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 // import { Link } from 'react-router-dom';
 // import type { RouterHistory } from 'react-router-dom';
-import { setSearchTerm } from '../../store/actionCreators';
+import { setSearchTerm } from '../../store/Search.action-creators';
 
 class Landing extends Component {
   propTypes = {

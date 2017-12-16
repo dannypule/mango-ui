@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { setSearchTerm } from '../../store/actionCreators';
+import { setSearchTerm } from '../../store/Search.action-creators';
 
 const Header = props => {
   let utilSpace;
@@ -20,7 +20,7 @@ const Header = props => {
   return (
     <header>
       <h1>
-        <Link to="/">svideo</Link>
+        <Link to="/">svideoz</Link>
       </h1>
       {utilSpace}
     </header>

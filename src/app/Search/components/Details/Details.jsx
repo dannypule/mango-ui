@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import getAPIDetails from '../../store/asyncActions';
+import getAPIDetails from '../../store/Search.async-actions';
 import Header from '../Header/Header';
 import Spinner from '../../../_shared/components/Spinner';
 

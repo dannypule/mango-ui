@@ -57,7 +57,7 @@ const App = () => (
 );
 
 App.propTypes = {
-  match: PropTypes.object.isRequired
+  match: PropTypes.object
 };
 
 export default App;

@@ -9,10 +9,11 @@ const ReactRouter = require('react-router-dom');
 const _ = require('lodash');
 const fs = require('fs');
 const compression = require('compression');
+const App = require('./src/app/App').default; // need to put default as 'export default' returns an object with default key on it
+
 // const webpackDevMiddleware = require('webpack-dev-middleware'); // relevant to serverside rendering
 // const webpackHotMiddleware = require('webpack-hot-middleware'); // relevant to serverside rendering
-// const webpack = require('webpack');
-const App = require('./src/app/App').default; // need to put default as 'export default' returns an object with default key on it
+// const webpack = require('webpack'); // relevant to serverside rendering
 // const webpackConfig = require('./webpack.config'); // relevant to serverside rendering
 
 const StaticRouter = ReactRouter.StaticRouter;
