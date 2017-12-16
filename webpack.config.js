@@ -8,7 +8,7 @@ const config = {
     'webpack-dev-server/client?http://localhost:8080', // normally used locally but we're commenting it out since we're server-side rendering locally
     'webpack/hot/only-dev-server', // normally used locally but we're commenting it out since we're server-side rendering locally
     // 'webpack-hot-middleware/client?path=__webpack_hmr&timeout=2000', // orient webpack to read from the normal server we wrote instead of the webpack dev server (used if server-side rendering locally)
-    './js/ClientApp.jsx' // entry point of app's code
+    './src/ClientApp.jsx' // entry point of app's code
   ],
   devtool: 'check-eval-source-map', // sourcemap tool
   output: {
@@ -47,7 +47,7 @@ const config = {
 };
 
 if (process.env.NODE_ENV === 'production') {
-  config.entry = './js/ClientApp.jsx'; // setup just one entry point
+  config.entry = './src/ClientApp.jsx'; // setup just one entry point
   config.devtool = false; // this says 'give me no source maps' which is what you want
   config.plugins = []; // remove plugins for prod build
 }
