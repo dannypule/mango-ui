@@ -1,11 +1,10 @@
-// @flow
-
 import React from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { setSearchTerm } from './actionCreators';
 
-const Header = (props: { showSearch?: boolean, handleSearchTermChange: Function, searchTerm: string }) => {
+const Header = props => {
   let utilSpace;
   if (props.showSearch) {
     utilSpace = (
@@ -26,6 +25,12 @@ const Header = (props: { showSearch?: boolean, handleSearchTermChange: Function,
       {utilSpace}
     </header>
   );
+};
+
+Header.propTypes = {
+  showSearch: PropTypes.bool,
+  handleSearchTermChange: PropTypes.func.isRequired,
+  searchTerm: PropTypes.string.isRequired
 };
 
 Header.defaultProps = {
