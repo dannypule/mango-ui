@@ -10,7 +10,7 @@ class Landing extends Component {
     searchTerm: PropTypes.string,
     handleSearchTermChange: PropTypes.func,
     clearSearchTerm: PropTypes.func,
-    history: PropTypes.object.isRequired // eslint-disable-line react/forbid-prop-types
+    history: PropTypes.object.isRequired
   };
 
   goToSearch = event => {

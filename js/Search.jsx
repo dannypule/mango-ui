@@ -16,8 +16,8 @@ const Search = props => (
 );
 
 Search.propTypes = {
-  searchTerm: PropTypes.string.isRequired, // eslint-disable-line
-  shows: PropTypes.array.isRequired // eslint-disable-line react/forbid-prop-types
+  // searchTerm: PropTypes.string.isRequired,
+  shows: PropTypes.array.isRequired
 };
 
 // ===============================

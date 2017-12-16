@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 // import type { Match } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
 import store from './store';
 import AsyncRoute from './AsyncRoute';
@@ -45,5 +46,9 @@ const App = () => (
     </div>
   </Provider>
 );
+
+App.propTypes = {
+  match: PropTypes.object.isRequired
+};
 
 export default App;

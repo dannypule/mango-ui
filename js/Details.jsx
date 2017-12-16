@@ -43,7 +43,7 @@ class Details extends Component {
 }
 
 Details.propTypes = {
-  show: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
+  show: PropTypes.object.isRequired,
   rating: PropTypes.string.isRequired,
   getAPIDetails: PropTypes.func.isRequired
 };
