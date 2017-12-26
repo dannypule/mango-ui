@@ -6,13 +6,6 @@ import PropTypes from 'prop-types';
 import { setSearchTerm } from '../../store/Search.action-creators';
 
 class Landing extends Component {
-  propTypes = {
-    searchTerm: PropTypes.string,
-    handleSearchTermChange: PropTypes.func,
-    clearSearchTerm: PropTypes.func,
-    history: PropTypes.object.isRequired
-  };
-
   goToSearch = event => {
     event.preventDefault();
     this.props.history.push('/search'); // history is now injected into every route so no need to use context
@@ -41,6 +34,13 @@ class Landing extends Component {
     );
   }
 }
+
+Landing.propTypes = {
+  searchTerm: PropTypes.string,
+  handleSearchTermChange: PropTypes.func,
+  clearSearchTerm: PropTypes.func,
+  history: PropTypes.object.isRequired
+};
 
 const mapStateToProps = state => ({ searchTerm: state.searchTerm }); // subscribe to a slice of state
 

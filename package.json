@@ -10,7 +10,7 @@
     "build:dev": "NODE_ENV=development webpack -d",
     "watch": "webpack --watch",
     "w": "webpack --watch",
-    "dev": "webpack-dev-server && npm run api",
+    "dev": "webpack-dev-server",
     "start": "NODE_ENV=server nodemon server.js",
     "start:foo": "NODE_ENV=production nodemon server.js",
     "api": "node ratingsAPI.js",
@@ -43,7 +43,7 @@
   },
   "devDependencies": {
     "babel-core": "6.24.1",
-    "babel-eslint": "7.2.3",
+    "babel-eslint": "8.1.2",
     "babel-loader": "7.0.0",
     "babel-plugin-dynamic-import-node": "1.0.2",
     "babel-plugin-syntax-dynamic-import": "6.18.0",

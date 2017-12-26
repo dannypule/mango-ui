@@ -48,6 +48,10 @@ Details.propTypes = {
   getAPIDetails: PropTypes.func.isRequired
 };
 
+Details.defaultProps = {
+  rating: '0'
+};
+
 const mapStateToProps = (state, ownProps) => {
   const apiData = state.apiData[ownProps.show.imdbID] ? state.apiData[ownProps.show.imdbID] : {};
   return {
