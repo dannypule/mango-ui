@@ -7,6 +7,12 @@ import store from './_store/store';
 import AsyncRoute from './AsyncRoute';
 import preload from '../../data.json';
 
+// if (typeof require.ensure !== 'function')
+//   require.ensure = (d, c) => {
+//     c(require);
+//   };
+// if (typeof require.include !== 'function') require.include = () => {};
+
 const FourOhFour = () => <h1>404</h1>;
 
 const App = () => (
