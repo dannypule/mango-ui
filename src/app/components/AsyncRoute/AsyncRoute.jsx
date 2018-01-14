@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Spinner from './_shared/components/Spinner';
+// import Spinner from './_shared/components/Spinner';
 
 class AsyncRoute extends Component {
   state = {
@@ -17,7 +17,8 @@ class AsyncRoute extends Component {
     if (this.state.loaded) {
       return <this.component {...this.props.props} />;
     }
-    return <Spinner />;
+    // return <Spinner />;
+    return null;
   }
 }
 

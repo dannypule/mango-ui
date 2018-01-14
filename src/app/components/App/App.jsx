@@ -3,9 +3,9 @@ import { Route, Switch } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
 // import classnames from 'classnames';
-import store from './_store/store';
-import AsyncRoute from './AsyncRoute';
-import preload from '../../data.json';
+import store from '../../_store/store';
+import AsyncRoute from '../AsyncRoute/AsyncRoute';
+import preload from '../../../../data.json';
 
 // if (typeof require.ensure !== 'function')
 //   require.ensure = (d, c) => {
@@ -22,16 +22,14 @@ const App = () => (
         <Route
           exact
           path="/"
-          component={props => (
-            <AsyncRoute props={props} loadingPromise={import('./Search/components/Landing/Landing')} />
-          )}
+          component={props => <AsyncRoute props={props} loadingPromise={import('../Search/Landing')} />}
         />
         <Route
           path="/search"
           component={props => (
             <AsyncRoute
               props={Object.assign({ shows: preload.shows }, props)}
-              loadingPromise={import('./Search/Search')}
+              loadingPromise={import('../Search/Search')}
             />
           )}
         />
@@ -44,7 +42,7 @@ const App = () => (
               <AsyncRoute
                 props={Object.assign({ show: selectedShow, match: {} }, props)}
                 show={selectedShow}
-                loadingPromise={import('./Search/components/Details/Details')}
+                loadingPromise={import('../Search/Details')}
               />
             );
           }}
@@ -56,6 +54,10 @@ const App = () => (
             return <Details show={selectedShow} {...props} />;
           }}
         /> */}
+        <Route
+          path="/gotchas"
+          component={props => <AsyncRoute props={props} loadingPromise={import('../Gotchas/Gotchas')} />}
+        />
         <Route component={FourOhFour} />
       </Switch>
     </div>

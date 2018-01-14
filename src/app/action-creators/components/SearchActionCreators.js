@@ -1,4 +1,4 @@
-import { SET_SEARCH_TERM, ADD_API_DATA } from './Search.actions';
+import { SET_SEARCH_TERM, ADD_API_DATA } from '../../actions/components/SearchActions';
 
 export function setSearchTerm(searchTerm) {
   return {

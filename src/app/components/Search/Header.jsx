@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { setSearchTerm } from '../../store/Search.action-creators';
+import { setSearchTerm } from '../../action-creators/components/SearchActionCreators';
 
 const Header = props => {
   let utilSpace;

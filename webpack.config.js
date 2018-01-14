@@ -41,7 +41,9 @@ const config = {
       {
         test: /\.jsx?$/,
         loader: 'babel-loader' // apply babel-loader to js and jsx files
-      }
+      },
+      { test: /\.css$/, loader: 'style-loader!css-loader' },
+      { test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' }
     ]
   }
 };

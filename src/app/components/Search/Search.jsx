@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import ShowCard from './components/ShowCard/ShowCard';
-import Header from './components/Header/Header';
+import ShowCard from './ShowCard';
+import Header from './Header';
 
 const Search = props => (
   <div className="search">

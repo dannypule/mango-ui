@@ -1,6 +1,6 @@
 import { createStore, compose, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
-import reducer from '../Search/store/Search.reducers';
+import reducer from './rootReducers';
 
 const store = createStore(
   reducer,
