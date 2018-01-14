@@ -1,8 +1,17 @@
 import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { Container, Header, Button } from 'semantic-ui-react';
+import { getValue } from '../../selectors/gotchasSelectors';
+import { increaseValue, decreaseValue } from '../../actions/components/gotchasActions';
 
 class Gotchas extends Component {
+  static propTypes = {
+    value: PropTypes.number.isRequired,
+    increaseValue: PropTypes.func.isRequired,
+    decreaseValue: PropTypes.func.isRequired
+  };
+
   constructor(props) {
     super(props);
     this.state = {
@@ -10,18 +19,8 @@ class Gotchas extends Component {
     };
   }
 
-  updateTitle(dir) {
-    return () => {
-      if (dir === 'up') {
-        this.setState({ value: this.state.value + 1 });
-      } else {
-        this.setState({ value: this.state.value - 1 });
-      }
-    };
-  }
-
   render() {
-    const { value } = this.state;
+    const { value } = this.props;
 
     return (
       <Container style={{ marginTop: '3em' }}>
@@ -30,10 +29,10 @@ class Gotchas extends Component {
             <Header as="h1">{value}</Header>
           </div>
           <div className="col-12">
-            <Button onClick={this.updateTitle('up')} primary>
+            <Button onClick={e => this.props.increaseValue(e, 3)} primary>
               +
             </Button>
-            <Button onClick={this.updateTitle('down')} primary>
+            <Button onClick={e => this.props.decreaseValue(e, 3)} primary>
               -
             </Button>
           </div>
@@ -43,8 +42,17 @@ class Gotchas extends Component {
   }
 }
 
-// Gotchas.propTypes = {
+const mapStateToProps = state => ({
+  value: getValue(state)
+});
 
-// }
+const mapDispatchToProps = dispatch => ({
+  increaseValue: (event, amount) => {
+    dispatch(increaseValue(amount));
+  },
+  decreaseValue: (event, amount) => {
+    dispatch(decreaseValue(amount));
+  }
+});
 
-export default Gotchas;
+export default connect(mapStateToProps, mapDispatchToProps)(Gotchas);
