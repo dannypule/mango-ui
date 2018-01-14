@@ -1,6 +1,6 @@
 // @flow
 
-import { setSearchTerm, addAPIData } from '../actionCreators';
+import { setSearchTerm, addAPIData } from '../app/Search/store/Search.action-creators';
 
 const strangerThings = {
   title: 'The Americans',

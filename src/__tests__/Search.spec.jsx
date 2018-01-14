@@ -3,10 +3,10 @@ import { shallow, render } from 'enzyme';
 import { Provider } from 'react-redux';
 import { MemoryRouter } from 'react-router-dom';
 import preload from '../../data.json';
-import store from '../store';
-import { setSearchTerm } from '../actionCreators';
-import Search, { Unwrapped as UnwrappedSearch } from '../Search';
-import ShowCard from '../ShowCard';
+import store from '../app/_store/store';
+import { setSearchTerm } from '../app/Search/store/Search.action-creators';
+import Search, { Unwrapped as UnwrappedSearch } from '../app/Search/Search';
+import ShowCard from '../app/Search/components/ShowCard/ShowCard';
 
 test('Search renders correctly', () => {
   const component = shallow(<UnwrappedSearch shows={preload.shows} searchTerm="" />);

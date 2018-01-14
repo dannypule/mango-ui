@@ -1,8 +1,8 @@
 // @flow
 
 import moxios from 'moxios';
-import { addAPIData } from '../actionCreators';
-import getAPIDetails from '../asyncActions';
+import { addAPIData } from '../app/Search/store/Search.action-creators';
+import getAPIDetails from '../app/Search/store/Search.async-actions';
 
 const strangerThings = {
   title: 'The Americans',

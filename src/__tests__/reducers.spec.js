@@ -1,6 +1,6 @@
 // @flwo
 
-import reducers from '../reducers';
+import reducers from '../app/Search/store/Search.reducers';
 
 test('SET_SEARCH_TERM', () => {
   const state = reducers({ searchTerm: '', apiData: {} }, { type: 'SET_SEARCH_TERM', payload: 'black' });
