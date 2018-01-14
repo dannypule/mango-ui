@@ -1,8 +1,8 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-// import type { Match } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
+// import classnames from 'classnames';
 import store from './_store/store';
 import AsyncRoute from './AsyncRoute';
 import preload from '../../data.json';
