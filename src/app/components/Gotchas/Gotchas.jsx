@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { Container, Header, Button } from 'semantic-ui-react';
+import { Button, Position, Toaster } from '@blueprintjs/core';
 import { getValue } from '../../selectors/gotchasSelectors';
 import { increaseValue, decreaseValue } from '../../actions/components/gotchasActions';
 
@@ -19,25 +19,24 @@ class Gotchas extends Component {
     };
   }
 
+  refHandlers = {
+    toaster: ref => {
+      this.toaster = ref;
+    }
+  };
+
+  addToast = () => {
+    this.toaster.show({ message: 'Toasted!' });
+  };
+
   render() {
-    const { value } = this.props;
+    // const { value } = this.props;
 
     return (
-      <Container style={{ marginTop: '3em' }}>
-        <div className="grid">
-          <div className="col-12">
-            <Header as="h1">{value}</Header>
-          </div>
-          <div className="col-12">
-            <Button onClick={e => this.props.increaseValue(e, 3)} primary>
-              +
-            </Button>
-            <Button onClick={e => this.props.decreaseValue(e, 3)} primary>
-              -
-            </Button>
-          </div>
-        </div>
-      </Container>
+      <div>
+        <Button onClick={this.addToast} text="Procure toast" />
+        <Toaster position={Position.TOP_RIGHT} ref={this.refHandlers.toaster} />
+      </div>
     );
   }
 }

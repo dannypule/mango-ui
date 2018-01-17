@@ -1,7 +1,8 @@
 import React from 'react';
 import { render } from 'react-dom';
-import 'semantic-ui-css/semantic.min.css';
+import 'normalize.css/normalize.css';
 import 'gridlex/dist/gridlex.min.css';
+import '@blueprintjs/core/dist/blueprint.css';
 // import Perf from 'react-addons-perf';
 import { BrowserRouter } from 'react-router-dom';
 import App from './components/App/App';
