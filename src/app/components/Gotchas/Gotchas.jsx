@@ -48,19 +48,6 @@ class Gotchas extends Component {
   }
 }
 
-// const mapStateToProps = state => ({
-//   value: getValue(state)
-// });
-
-// const mapDispatchToProps = dispatch => ({
-//   increaseValue: (event, amount) => {
-//     dispatch(increaseValue(amount));
-//   },
-//   decreaseValue: (event, amount) => {
-//     dispatch(decreaseValue(amount));
-//   }
-// });
-
 export default connect(
   state => ({
     value: getValue(state)
